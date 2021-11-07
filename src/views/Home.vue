@@ -13,7 +13,7 @@
       </div>
     </div>
     <Input />
-    <div class="bg-white w-3/4 ml-5 p-2">
+    <div class="bg-white w-3/4 ml-5 p-3">
       <TableHead />
       <Table />
     </div>

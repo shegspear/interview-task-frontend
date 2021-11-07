@@ -1,33 +1,22 @@
 <template>
-    <table class="w-full bg-white">
-        <thead>
-            <tr>
-                <th> ID </th>
-                <th> name </th>
-                <th> sex </th>
-                <th><Filter /></th>
-                <th> age </th>
-                <th> role </th>
-            </tr>
-        </thead>
-        <tbody v-if="empty === true">
-          <div class="flex justify-center items-center">
-          <div
-            class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"
-          ></div>
-          </div>
-        </tbody>
-        <tbody class="w-full" v-for="(item, index) in arr" :key={index}>
-          <tr  class="m-5">
-            <td class="mr-8" >{{item._id}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.sex}}</td>
-            <td> </td>
-            <td>{{item.age}}</td>
-            <td>{{item.role}}</td>
-          </tr>
-      </tbody>
-    </table>
+    <div class="grid grid-cols-6 gap-4">
+      <span>ID</span>
+      <span>name</span>
+      <span>sex</span>
+      <span><Filter /></span>
+      <span>age</span>
+      <span>role</span>
+    </div>
+    <div class="w-full" v-for="(item, index) in arr" :key={index}>
+      <div class="border border-gray-200 hover:bg-gray-100 grid grid-cols-6 gap-4 py-4">
+        <span>{{item._id}}</span>
+        <span>{{item.name}}</span>
+        <span>{{item.sex}}</span>
+        <span></span>
+        <span>{{item.age}}</span>
+        <span>{{item.role}}</span>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -55,8 +44,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .t-row {
-    margin: 20px 0px;
+    margin: 10px 0px;
   }
 </style>
