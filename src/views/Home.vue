@@ -27,6 +27,7 @@ import Input from '@/components/Input.vue'
 import TableHead from '@/components/TableHead.vue'
 import Table from '@/components/Table.vue'
 import SideNav from '@/components/SideNav'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -35,6 +36,15 @@ export default {
     TableHead,
     Table,
     SideNav
+  },
+  computed: {
+    ...mapState['.personelArr']
+  },
+  methods: {
+    ...mapActions(['getPersonel'])
+  },
+  mounted: async function () {
+    this.getPersonel()
   }
 }
 </script>
