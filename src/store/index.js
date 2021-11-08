@@ -19,21 +19,15 @@ apiClient.interceptors.response.use(response => {
 
 export default createStore({
   state: {
-    personelArr: [],
-    pointer: 'Hello'
+    loading: false,
+    filter: null
   },
   mutations: {
-    appendPersonel (state, payload) {
-      state.personelArr = [...payload]
-      // console.log('state:>> ', ...state.personelArr)
+    toggleLoader (state, payload) {
+      state.loading = payload
     }
   },
   actions: {
-    async getPersonel (context) {
-      const data = await apiClient.get('/api/personels')
-      const res = data.data
-      context.commit('appendPersonel', res)
-    }
   },
   modules: {
   }
